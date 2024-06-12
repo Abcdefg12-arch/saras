@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SarasCan Inc </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <style>
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1em;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 80px;
+            margin-right: 10px;
+        }
+
+        .logo span {
+            font-size: 1.5em;
+            font-weight: bold;
+            
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        header {
+            background: #FF7A23;
+            color: white;
+            
+            padding: 3em 0;
+            
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 2em;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .burger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .hero {
+    background: url('about.jpeg') no-repeat center center/cover;
+    color: #fff;
+    height: 100vh;
+   width: 100%; /* Ensures the hero section spans the full width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+     /* Adjust this value to match the height of your header */
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+font-family: 'Times New Roman', Times, serif;
+        }
+
+        .hero h1,
+        .hero p {
+            position: relative;
+            z-index: 1;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        section {
+            padding: 2em 1em;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .grid-section {
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1em;
+        }
+
+        .grid-item {
+            padding: 1em;
+            background: #f3efef;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .grid-item i {
+            margin-bottom: 0.5em;
+            color: #FF7A23;
+        }
+
+        .grid-item p {
+            margin: 0.5em 0;
+        }
+
+        .grid-item p.bold {
+            font-weight: bold;
+            font-size: 1.2em;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .footer {
+            padding: 20px 0;
+            text-align: center;
+            background-color: #374049;
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer ul li {
+            margin: 5px 0;
+        }
+
+        .footer ul li a {
+            color: #ddd;
+            text-decoration: none;
+        }
+
+        .footer ul li a:hover {
+            color: #fff;
+        }
+
+        @media (min-width: 600px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 900px) {
+            .grid-container {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .burger {
+                display: block;
+            }
+
+            .burger.active + .nav-links {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links li {
+                margin: 1em 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="logo">
+                <img src="saras can.png" alt="Saras Canada Logo">
+                <span>SarasCan Inc</span>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Services
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="software-development.html">Software Development</a>
+                            <a class="dropdown-item" href="app-development.html">App Development</a>
+                            <a class="dropdown-item" href="infrastructure-services.html">Infrastructure Services</a>
+                            <a class="dropdown-item" href="cloud-computing.html">Cloud Computing</a>
+                            <a class="dropdown-item" href="staffing.html">Staffing</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCareers" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Careers
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownCareers">
+                            <a class="dropdown-item" href="ceipal.html">CEIPAL</a>
+                            <a class="dropdown-item" href="careers.html">Careers</a>
+                            <a class="dropdown-item" href="full-time-positions.html">Full Time Positions</a>
+                            <a class="dropdown-item" href="referral-program.html">Referral Program</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <!-- Add your hero content here -->
+        </section>
+    
+        <section class="mission">
+            <br>
+            <br>
+            <h2 style="font-size: xx-large;font-family: 'Times New Roman', Times, serif;" >About SarasAmerica Inc</h2>
+            <p style="font-size: larger;font-family: 'Times New Roman', Times, serif;">For over two decades, Saras America Inc has been at the forefront of the IT consultancy sector, delivering innovative solutions and unmatched services to a diverse range of clients. Our dedication to staying ahead of technological advancements, coupled with our commitment to client satisfaction, has allowed us to build a strong reputation as a trusted partner in the IT industry.  
+            </p>
+            <h2 style="font-size: xx-large;font-family: 'Times New Roman', Times, serif;">SarasCan Inc: Our Commitment to Canada  </h2> 
+           <p style="font-size: larger;font-family: 'Times New Roman', Times, serif;" >Sarascan Inc is our latest venture, strategically positioned in Canada to cater to the unique IT consultancy and ITO (Information Technology Outsourcing) service needs of businesses in this region. We bring the same level of excellence, knowledge, and innovation that has made Saras America Inc a trusted name in the industry.  </p>
+        <h2 style="font-size: xx-large;font-family: 'Times New Roman', Times, serif;">Our Vision</h2>
+        <p style="font-size: larger;font-family: 'Times New Roman', Times, serif;">  
+            At Sarascan Inc, our vision is to be a catalyst for growth and transformation through IT excellence. We aim to empower Canadian businesses with cutting-edge IT solutions that enhance efficiency, productivity, and competitiveness on a global scale.  </p>
+        </section>
+
+        <section class="grid-section"> 
+            <h2>Why Choose SarasCan Inc?</h2>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <i class="fas fa-user-tie fa-3x"></i>
+                    <p class="bold">Experience</p>
+                    <p>With a quarter-century of industry experience, we possess the knowledge and insights needed to navigate the complexities of modern IT.</p>
+                </div>
+                <div class="grid-item">
+                    <i class="fas fa-lightbulb fa-3x"></i>
+                    <p class="bold">Innovation</p>
+                    <p>We stay at the forefront of technological advancements, ensuring our clients benefit from the latest trends and solutions.</p>
+                </div>
+                <div class="grid-item">
+                    <i class="fas fa-handshake fa-3x"></i>
+                    <p class="bold">Client-Centric Approach</p>
+                    <p>Our clients' success is our top priority, and we work collaboratively to achieve their goals.</p>
+                </div>
+                <div class="grid-item">
+                    <i class="fas fa-globe fa-3x"></i>
+                    <p class="bold">Global Reach, Local Expertise</p>
+                    <p>As part of the Saras family, we have a global network of experts while offering local insights and personalized service.</p>
+                </div>
+            </div>
+        </section>
+        
+                <!-- Add more grid items as needed -->
+            </div>
+        </section>
+    
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled" style="color: #f3efef;">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Services</h5>
+                    <ul class="list-unstyled" style="color: #fff;">
+                        <li><a href="software-development.html">Software Development</a></li>
+                        <li><a href="app-development.html">App Development</a></li>
+                        <li><a href="infrastructure-services.html">Infrastructure Services</a></li>
+                        <li><a href="cloud-computing.html">Cloud Computing</a></li>
+                        <li><a href="staffing.html">Staffing</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <ul class="list-unstyled" style="color: #fff;">
+                        <li><a href="#">Facebook</a></li>
+                       <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p>&copy; 2024 Saras Can Inc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
